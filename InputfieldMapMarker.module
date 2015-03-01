@@ -102,7 +102,7 @@ class InputfieldMapMarker extends Inputfield {
 			'lng' => $this->_('Longitude'),
 			'geo' => $this->_('Geocode?'),
 			'zoom' => $this->_('Zoom'),
-			'latslngs' => $this->_('Polygon')
+			'latslngs' => $this->_('Polyline')
 			);
 
 		$out = <<< _OUT
@@ -140,6 +140,14 @@ class InputfieldMapMarker extends Inputfield {
 			</label>
 		</p>
 
+		
+		<p class='InputfieldMapMarkerZoom'>
+			<label>
+				<strong>$labels[zoom]</strong><br />
+				<input type='number' min='0' id='_{$id}_zoom' name='_{$name}_zoom' value='{$marker->zoom}' />
+			</label>
+		</p>
+
 		<p class='InputfieldMapMarkerLatsLngs'>
 			<label>
 				<strong>$labels[latslngs]</strong><br />
@@ -147,12 +155,6 @@ class InputfieldMapMarker extends Inputfield {
 			</label>
 		</p>
 
-		<p class='InputfieldMapMarkerZoom'>
-			<label>
-				<strong>$labels[zoom]</strong><br />
-				<input type='number' min='0' id='_{$id}_zoom' name='_{$name}_zoom' value='{$marker->zoom}' />
-			</label>
-		</p>
 
 
 _OUT;
